@@ -3,9 +3,8 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalCSS } from "./globa-css"
-
+import { ResetCSS } from "./reset-css"
 import Header from "./header"
-import "./layout.css"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -20,6 +19,7 @@ const Layout = ({ children }) => {
 
   return (
     <>
+      <ResetCSS />
       <GlobalCSS />
       <Header siteTitle={data.site.siteMetadata.title} />
       <div
