@@ -5,6 +5,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import { GlobalCSS } from "./globa-css"
 import { ResetCSS } from "./reset-css"
 import Header from "./header"
+import Footer from "./footer"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -30,11 +31,7 @@ const Layout = ({ children }) => {
         }}
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
+        <Footer />
       </div>
     </>
   )
