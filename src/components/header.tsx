@@ -2,13 +2,14 @@ import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
 
-const Header = ({ siteTitle }) => (
+interface Props {
+  siteTitle: string
+}
+const Header = ({ siteTitle }: Props) => (
   <MyHeader>
-    <Container >
+    <Container>
       <Title>
-        <TitleLink to="/" >
-          {siteTitle}
-        </TitleLink>
+        <TitleLink to="/">{siteTitle}</TitleLink>
       </Title>
     </Container>
   </MyHeader>

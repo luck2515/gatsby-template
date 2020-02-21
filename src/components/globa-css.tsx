@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react"
 import { createGlobalStyle } from "styled-components"
 
 export const GlobalCSS = () => <Global />
@@ -46,10 +46,5 @@ const Global = createGlobalStyle`
             @media screen and (max-width: 480px) {
             }
         }
-    }
-    #gatsby-focus-wrapper {
-        display: flex;
-        flex-flow: column;
-        min-height: 100vh;
     }
 `

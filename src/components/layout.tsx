@@ -7,7 +7,7 @@ import { ResetCSS } from "./reset-css"
 import Header from "./header"
 import Footer from "./footer"
 
-const Layout = ({ children }) => {
+const Layout = ({ children }: any) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -32,10 +32,11 @@ const Layout = ({ children }) => {
 }
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   margin: 0 auto;
   max-width: 960px;
-  padding: 0 1.0875rem 1.45rem;
 `
-
 
 export default Layout
