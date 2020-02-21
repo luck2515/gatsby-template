@@ -2261,7 +2261,10 @@ export type StringQueryOperatorInput = {
 export type Unnamed_1_QueryVariables = {};
 
 
-export type Unnamed_1_Query = { placeholderImage: Maybe<{ childImageSharp: Maybe<{ fluid: Maybe<GatsbyImageSharpFluidFragment> }> }> };
+export type Unnamed_1_Query = { allFile: { edges: Array<{ node: (
+        Pick<File, 'relativePath'>
+        & { childImageSharp: Maybe<{ fluid: Maybe<Pick<ImageSharpFluid, 'src' | 'sizes' | 'aspectRatio'>> }> }
+      ) }> } };
 
 export type SiteTitleQueryQueryVariables = {};
 
