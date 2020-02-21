@@ -1,9 +1,12 @@
 import React from "react"
+import styled from "styled-components"
 
 const Footer = () => (
-    <footer>
+    <MyFooter>
         © {new Date().getFullYear()} @luck2515_
-    </footer>
+    </MyFooter>
 )
+
+const MyFooter = styled.footer``
 
 export default Footer

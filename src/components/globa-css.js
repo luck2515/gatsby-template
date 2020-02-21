@@ -41,7 +41,7 @@ const Global = createGlobalStyle`
             font-size: 1.6em;
             overflow-x: hidden;
             @media screen and (max-width: 768px) {
-            font-size: 1.4em;
+                font-size: 1.4em;
             }
             @media screen and (max-width: 480px) {
             }

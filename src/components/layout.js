@@ -1,5 +1,5 @@
 import React from "react"
-import PropTypes from "prop-types"
+import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
 
 import { GlobalCSS } from "./globa-css"
@@ -23,22 +23,19 @@ const Layout = ({ children }) => {
       <ResetCSS />
       <GlobalCSS />
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
+      <Wrapper>
         <main>{children}</main>
         <Footer />
-      </div>
+      </Wrapper>
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
+const Wrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0 1.0875rem 1.45rem;
+`
+
 
 export default Layout
