@@ -1,6 +1,6 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
-import { FileConnection } from "../../types/graphql-types"
+import { Query } from "../../types/graphql-types"
 import Img from "gatsby-image"
 
 interface Props {
@@ -30,7 +30,7 @@ export default ({ filename }: Props) => (
       }
     `}
     // 全画像情報がdataに代入されている
-    render={data => {
+    render={(data: Query) => {
       // 指定した画像ファイルパス（コンポーネントのプロパティ）と
       // 一致するgatsby-image用の情報を取得
       const image = data.allFile.edges.find(n => {
@@ -40,8 +40,13 @@ export default ({ filename }: Props) => (
       if (!image) return
 
       // Imgタグでgatsby-imageで最適化された画像を表示する
-      const imageSizes = image.node.childImageSharp.fluid
-      return <Img sizes={imageSizes} />
+      if (
+        image.node.childImageSharp !== null &&
+        image.node.childImageSharp !== undefined
+      ) {
+        const imageSizes = image.node.childImageSharp.fluid
+        return <Img sizes={imageSizes} />
+      }
     }}
   />
 )
