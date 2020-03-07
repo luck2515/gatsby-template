@@ -1672,9 +1672,10 @@ export type SiteFieldsEnum =
   'internal___mediaType' |
   'internal___owner' |
   'internal___type' |
-  'siteMetadata___title' |
+  'siteMetadata___siteTitle' |
   'siteMetadata___description' |
   'siteMetadata___author' |
+  'siteMetadata___lang' |
   'port' |
   'host' |
   'polyfill' |
@@ -2229,15 +2230,17 @@ export type SitePluginSortInput = {
 };
 
 export type SiteSiteMetadata = {
-  title?: Maybe<Scalars['String']>,
+  siteTitle?: Maybe<Scalars['String']>,
   description?: Maybe<Scalars['String']>,
   author?: Maybe<Scalars['String']>,
+  lang?: Maybe<Scalars['String']>,
 };
 
 export type SiteSiteMetadataFilterInput = {
-  title?: Maybe<StringQueryOperatorInput>,
+  siteTitle?: Maybe<StringQueryOperatorInput>,
   description?: Maybe<StringQueryOperatorInput>,
   author?: Maybe<StringQueryOperatorInput>,
+  lang?: Maybe<StringQueryOperatorInput>,
 };
 
 export type SiteSortInput = {
@@ -2269,12 +2272,12 @@ export type Unnamed_1_Query = { allFile: { edges: Array<{ node: (
 export type SiteTitleQueryQueryVariables = {};
 
 
-export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title'>> }> };
+export type SiteTitleQueryQuery = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteTitle'>> }> };
 
 export type Unnamed_2_QueryVariables = {};
 
 
-export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'title' | 'description' | 'author'>> }> };
+export type Unnamed_2_Query = { site: Maybe<{ siteMetadata: Maybe<Pick<SiteSiteMetadata, 'siteTitle' | 'description' | 'author' | 'lang'>> }> };
 
 export type GatsbyImageSharpFixedFragment = Pick<ImageSharpFixed, 'base64' | 'width' | 'height' | 'src' | 'srcSet'>;
 

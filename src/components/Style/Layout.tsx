@@ -1,28 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 import { useStaticQuery, graphql } from "gatsby"
+import SEO from "../Organisms/Seo"
 
-import { GlobalCSS } from "./globa-css"
-import { ResetCSS } from "./reset-css"
-import Header from "./header"
-import Footer from "./footer"
+import { GlobalCSS } from "./GlobaCSS"
+import { ResetCSS } from "./ResetCSS"
+import Header from "../Organisms/Header"
+import Footer from "../Organisms/Footer"
 
-const Layout = ({ children }: any) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
+interface Props {
+  pageTitle: string
+}
+const Layout: React.FC<Props> = ({ children, pageTitle }) => {
   return (
     <>
       <ResetCSS />
       <GlobalCSS />
-      <Header siteTitle={data.site.siteMetadata.title} />
+      <SEO pageTitle={pageTitle} />
+      <Header />
       <Wrapper>
         <main>{children}</main>
         <Footer />

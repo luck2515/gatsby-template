@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `gatsby template`,
+    siteTitle: `gatsby template`,
     description: `this is gatsby template`,
     author: `@luck2515_`,
+    lang: `ja`,
   },
   plugins: [
     `gatsby-plugin-typescript`,
@@ -33,8 +34,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-graphql-codegen`,
       options: {
-        fileName: `types/graphql-types.d.ts`
-      }
-    }
+        fileName: `types/graphql-types.d.ts`,
+      },
+    },
   ],
 }
