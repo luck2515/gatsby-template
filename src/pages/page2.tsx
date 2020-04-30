@@ -7,9 +7,9 @@ import Theme from "../components/Style/Theme"
 const IndexPage = memo(() => {
   return (
     <ThemeProvider theme={Theme}>
-      <Layout pageTitle="Home">
-        <div>Page1</div>
-        <Link to="/page2">Go to Page2</Link>
+      <Layout pageTitle="Page2">
+        <div>Page2</div>
+        <Link to="/">Go to Home</Link>
       </Layout>
     </ThemeProvider>
   )

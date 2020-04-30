@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, graphql } from "gatsby"
 import SEO from "../Organisms/Seo"
+import settings from "./Settings"
 
-import { GlobalCSS } from "./GlobaCSS"
+import { GlobalCSS } from "./GlobalCSS"
 import { ResetCSS } from "./ResetCSS"
 import Header from "../Organisms/Header"
 import Footer from "../Organisms/Footer"
@@ -18,20 +18,20 @@ const Layout: React.FC<Props> = ({ children, pageTitle }) => {
       <GlobalCSS />
       <SEO pageTitle={pageTitle} />
       <Header />
-      <Wrapper>
+      <Container>
         <main>{children}</main>
         <Footer />
-      </Wrapper>
+      </Container>
     </>
   )
 }
 
-const Wrapper = styled.div`
+const Container = styled.div`
+  min-height: calc(100vh - ${settings.SIZE.HEADER_HEIGHT});
+  margin: 0 auto;
+  max-width: 1280px;
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 0 auto;
-  max-width: 960px;
 `
 
 export default Layout

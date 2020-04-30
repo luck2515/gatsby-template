@@ -1,9 +1,10 @@
-import React from "react"
+import React, { memo } from "react"
 import styled from "styled-components"
-import TitleLink from "../Atoms/TitleLink"
+import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
+import settings from "../Style/Settings"
 
-const Header = () => {
+const Header = memo(() => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -16,21 +17,24 @@ const Header = () => {
 
   return (
     <MyHeader>
-      <Container>
-        <TitleLink title={data.site.siteMetadata.siteTitle} />
-      </Container>
+      <TitleLink to="/">
+        <Title>{data.site.siteMetadata.siteTitle}</Title>
+      </TitleLink>
     </MyHeader>
   )
-}
+})
 
 const MyHeader = styled.header`
-  background: rebeccapurple;
-  margin-bottom: 1.45rem;
+  line-height: ${settings.SIZE.HEADER_HEIGHT};
+  background: white;
 `
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960;
-  padding: 1.45rem 1.0875rem;
+const TitleLink = styled(Link)`
+  text-decoration: none;
+`
+const Title = styled.h1`
+  color: black;
+  text-align: center;
+  font-size: 1.5em;
 `
 
 export default Header
